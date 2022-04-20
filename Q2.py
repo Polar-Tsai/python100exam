@@ -38,8 +38,22 @@ r = 0
 for idx in range(0,6):
     if i>arr[idx]:
         r+=(i-arr[idx])*rat[idx]
-        print ((i-arr[idx])*rat[idx])
+        print((i-arr[idx])*rat[idx])
         i=arr[idx]
 print (r)
 
 print("=" * 20)
+# 我自己消化後的改良版
+
+I = int(input("please insert interest:"))
+bonus = 0
+gap = [1000000, 600000, 400000, 200000, 100000, 0] # 要先放入條件最嚴謹的，才能吃到後面的條件
+commission = [0.001, 0.0015, 0.003, 0.005, 0.075, 0.01]
+
+for i in range(0, 6): # 依序走過gap，讓程式判斷I符合哪個條件
+    if I > gap[i]:
+        # bonus_list = []
+        bonus = I * commission[i]
+        # bonus_list.append(bonus)
+        print("抽成:", commission[i])
+        print("獎金:", bonus)
