@@ -18,3 +18,14 @@ for n in range(100,1000):
     k = n % 10
     if n == i*i*i + j*j*j + k*k*k: 
         print(n)
+
+
+# 153
+for n in range(100, 1000): # 三位數，所以限制在100~999之間
+    hundred = n // 100
+    ten = n // 10 % 10
+    single = n % 10
+    if n == hundred**3 + ten**3 + single**3:
+        print(n)
+
+
